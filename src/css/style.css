@@ -95,21 +95,24 @@ header button svg {
 .container {
   width: 100%;
   float: left;
-  padding: 15px;
+  padding: 15px 15px 70px 15px;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  height: 40px;
+  height: 50px;
+  padding-top: 15px;
   width: 100%;
   text-align: center;
+  background: #edf0f1;
+  border-top: 1px solid #d8e5e0;
 }
 
 footer .author {
   font-family: 'Lato', sans-serif;
   text-decoration: none;
-  color: #25b99a;
+  color: #21866f;
 }
 
 ul.todo {
