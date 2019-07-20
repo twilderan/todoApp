@@ -98,6 +98,19 @@ header button svg {
   padding: 15px;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+footer .author {
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  color: #25b99a;
+}
 
 ul.todo {
   width: 100%;
