@@ -15,14 +15,24 @@ renderTodoList();
 // if there is any text inside the item field add that text to the todo list.
 document.getElementById('add').addEventListener('click', function () {
   let value = document.getElementById('item').value;
-  if (value) {
-    addItemTodo(value);
-    document.getElementById('item').value = '';
-
-    data.todo.push(value);
-    dataObjectUpdated();
-  }
+  if (value) addItem(value);
 });
+
+// User clicked on the Enter button
+// if there is any text inside the item field add that text to the todo list.
+document.getElementById('item').addEventListener('keypress', function () {
+  let value = this.value;
+  if (event.which === 13 && value) addItem(value);
+});
+
+// Add item to the todo list.
+function addItem(value) {
+  addItemTodo(value);
+  document.getElementById('item').value = '';
+
+  data.todo.push(value);
+  dataObjectUpdated();
+}
 
 // Render each item from storage.
 function renderTodoList() {
