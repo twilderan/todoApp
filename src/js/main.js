@@ -15,19 +15,23 @@ renderTodoList();
 // if there is any text inside the item field add that text to the todo list.
 document.getElementById('add').addEventListener('click', function () {
   let value = document.getElementById('item').value;
-  if (value) addItem(value);
+  if (value) {
+    addItem(value);
+  }
 });
 
 // User clicked on the Enter button
 // if there is any text inside the item field add that text to the todo list.
 document.getElementById('item').addEventListener('keypress', function () {
   let value = this.value;
-  if (event.which === 13 && value) addItem(value);
+  if (event.which === 13 && value) {
+    addItem(value);
+  }
 });
 
 // Add item to the todo list.
 function addItem(value) {
-  addItemTodo(value);
+  addItemToDOM(value);
   document.getElementById('item').value = '';
 
   data.todo.push(value);
@@ -40,12 +44,12 @@ function renderTodoList() {
 
   for (let i = 0; i < data.todo.length; i++) {
     let value = data.todo[i];
-    addItemTodo(value)
+    addItemToDOM(value)
   }
 
   for (let j = 0; j < data.completed.length; j++) {
     let value = data.completed[j];
-    addItemTodo(value, true);
+    addItemToDOM(value, true);
   }
 }
 
@@ -92,7 +96,7 @@ function completeItem() {
 }
 
 // Adds a new item to the todo list.
-function addItemTodo(text, completed) {
+function addItemToDOM(text, completed) {
   let list = (completed) ? document.getElementById('completed') :document.getElementById('todo');
 
   let item = document.createElement('li');
